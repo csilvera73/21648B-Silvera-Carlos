@@ -1,5 +1,10 @@
+//con el modelo obtenemos todas las notas
+const {PostModel} = require("../model/Posts")
+
 const getAllPosts = async (req, res) => {
-    res.render("index")
+    const allPosts = await PostModel.findAll()
+    
+    res.render("index", {allPosts})
 }
 
 const createNewPost = async (req, res) => {}

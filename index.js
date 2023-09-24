@@ -3,6 +3,7 @@ const express = require ('express')
 const cors = require ('cors')
 const morgan = require ('morgan')  
 const {sequelize} = require ("./database")
+require("./src/model/Posts")
 
 //creamos un servidor
 const app = express ()
@@ -25,6 +26,7 @@ app.use("/posts",require("./routes/posts.routes"))
 
 //escucha en port 4000, pasamos un callback
 app.listen(4000,()=>{
-    sequelize.authenticate()
+    /* sequelize.authenticate() */
+    sequelize.sync({force:false}) // true: para la creacion de los campos de la BD
     console.log("Server running on port 4000 ...");
 })
