@@ -30,6 +30,7 @@ const createPost = async (req,res) =>{
    /*  res.send ("Post created successfully") */
    res.redirect("/posts")
 }
+
 const updatePost = async (req,res) =>{
     const {id, title, content, imglink } = req.body
 
@@ -40,5 +41,15 @@ const updatePost = async (req,res) =>{
    res.redirect("/posts")
 }
 
+const deletePost = async (req,res) =>{
+    const postId =req.params.id  // capturo el parametro dinamico
 
-module.exports = {getAllPosts, formCreateNewPost, createPost, formUpdatePost, updatePost}
+    const post = await PostModel.findByPk(postId)
+
+   await post.destroy()
+
+   res.redirect("/posts")
+}
+
+
+module.exports = {getAllPosts, formCreateNewPost, createPost, formUpdatePost, updatePost, deletePost}
