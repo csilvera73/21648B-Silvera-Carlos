@@ -3,10 +3,20 @@ const {PostModel} = require("../model/Posts")
 
 const getAllPosts = async (req, res) => {
     const allPosts = await PostModel.findAll()
-    
+
     res.render("index", {allPosts})
 }
 
-const createNewPost = async (req, res) => {}
+const formCreateNewPost = async (req, res) => {
+    res.render("new-post")
+}
 
-module.exports = {getAllPosts, createNewPost}
+const createPost = async (req,res) =>{
+    const {title, content, imglink } = req.body
+    await PostModel.create({title, content, imglink } )
+   /*  res.send ("Post created successfully") */
+   res.redirect("/posts")
+
+}
+
+module.exports = {getAllPosts, formCreateNewPost, createPost}

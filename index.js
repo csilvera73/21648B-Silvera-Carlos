@@ -10,6 +10,7 @@ const app = express ()
 
 //middlewares
 app.use(express.json())
+app.use(express.urlencoded({extended:false}))  //necesario para el formulario de create para que entienda la informacion, no json
 app.use(cors())
 app.use(morgan("dev"))
 
