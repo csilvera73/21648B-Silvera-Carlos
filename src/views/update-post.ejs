@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new-post</title>
+</head>
+<body>
+    <a href="/posts">Volver</a>
+    <h1>Actualizar Post</h1>
+
+    <form action="/posts/update" method="post">
+        <input type="text" name="id" value="<%= post.id %>" hidden>
+        <input type="text" name="title" id="" placeholder="Titulo" value="<%= post.title %>"><br>
+        <textarea name="content" id="" cols="100" rows="10" placeholder="Contenido"><%= post.content %></textarea><br>
+        <input type="text" name="imglink" id="" placeholder="URL imagen" value="<%= post.imglink %>"><br><br>
+        <button>Guardar</button>
+
+    </form>
+   
+        
+</body>
+</html>
