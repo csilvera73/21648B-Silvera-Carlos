@@ -1,6 +1,7 @@
 //con el modelo obtenemos todas las notas
 const {PostModel} = require("../model/Posts")
 
+//Controladores para renderizar páginas
 const getAllPosts = async (req, res) => {
     const allPosts = await PostModel.findAll()
 
@@ -24,6 +25,7 @@ const formUpdatePost = async (req, res)=> {
     res.render("update-post", {post})
 }
 
+// Controladores que efectuan caqmbios en la Base de Datos y redireccionan
 const createPost = async (req,res) =>{
     const {title, content, imglink } = req.body
     await PostModel.create({title, content, imglink } )
@@ -36,7 +38,7 @@ const updatePost = async (req,res) =>{
 
     const post = await PostModel.findByPk(id)
 
-   await post.update({title, content, imglink })
+    await post.update({title, content, imglink })
     
    res.redirect("/posts")
 }
@@ -45,11 +47,10 @@ const deletePost = async (req,res) =>{
     const postId =req.params.id  // capturo el parametro dinamico
 
     const post = await PostModel.findByPk(postId)
-
-   await post.destroy()
-
-   res.redirect("/posts")
+    
+    await post.destroy()
+    
+    res.redirect("/posts")
 }
-
 
 module.exports = {getAllPosts, formCreateNewPost, createPost, formUpdatePost, updatePost, deletePost}
