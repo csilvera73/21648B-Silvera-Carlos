@@ -14,9 +14,18 @@ Proyecto Básico de un Foro Personalizado para Publicar Contenido Multitemático
 ##### Rutas
 
 + *Url inicial:* <http://localhost:4000/posts>
-+ *Crear:* <http://localhost:4000/posts/create>
-+ *Editar:* <http://localhost:4000/posts/update:id>
-+ *Eliminar:* <http://localhost:4000/posts/delete:id>
 
+![Pantalla Principal Posts](../21648B-Silvera-Carlos/public/img/PantallaPrincipal.png "Pantalla Principal")
++ *Crear:* <http://localhost:4000/posts/create>
+
+![Crear Nuevo Post](../21648B-Silvera-Carlos/public/img/create.png "Crear nuevo Post")
+
++ *Editar:* <http://localhost:4000/posts/update:id>
+![Editar un Post](../21648B-Silvera-Carlos/public/img/Actualizar.png "Editar un Post")
+
++ *Eliminar:* <http://localhost:4000/posts/delete:id>
+![Eliminar un Post](../21648B-Silvera-Carlos/public/img/delete.png "Eliminar un Post")
+
+---
 
 

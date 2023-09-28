@@ -1,6 +1,6 @@
 footer {
     background-color: black;
-    color:green;
+    color:blue;
         display: flex;
     flex-direction: row;
     justify-content: space-around;

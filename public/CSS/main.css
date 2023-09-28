@@ -1,4 +1,8 @@
-body{
-    background-color: black;
-    color: aqua;
-}
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    background-color: black
+    color: whitesmoke;
+    }
