@@ -26,6 +26,11 @@ Proyecto Básico de un Foro Personalizado para Publicar Contenido Multitemático
 + *Eliminar:* <http://localhost:4000/posts/delete:id>
 ![Eliminar un Post](../21648B-Silvera-Carlos/public/img/delete.png "Eliminar un Post")
 
+
+#### Tabla Posts
+
+Se provee archivo *posts.sql* para crear e importar datos en la tabla desde <http://localhost/phpmyadmin/>
+
 ---
 
 
