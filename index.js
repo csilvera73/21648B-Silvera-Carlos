@@ -4,6 +4,7 @@ const cors = require ('cors')
 const morgan = require ('morgan')  
 const {sequelize} = require ("./database")
 require("./src/model/Posts")
+const path = require('path');
 
 //creamos un servidor
 const app = express ()
@@ -17,7 +18,8 @@ app.use(morgan("dev"))
 //Archivos de vistas en otro nivel de carpetas
 app.set("views", __dirname + "/src/views")
 
-app.use(express.static("public"))
+/* app.use(express.static("/public") */
+app.use(express.static(path.join(__dirname, '/public')))
 
 //Setup del motor de plantillas
 app.set("view engine", "ejs")
